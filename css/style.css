@@ -932,6 +932,7 @@ section {
     width: 100%;
     padding: 40px 0;
     background-color: var(--main-bg-color);
+    border-top: 3px solid var(--main-color);  /* Added this line */
 }
 
 .footer .social {
