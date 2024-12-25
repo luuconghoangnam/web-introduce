@@ -31,8 +31,7 @@
     box-sizing: border-box;
     color: #fff;
     text-shadow: 0 5px 10px #0004;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 1px solid #ff1a1a;
+    background-color: #0000007e;
 }
 .carousel .list .item .author{
     font-weight: bold;
@@ -47,7 +46,7 @@
     line-height: 1.3em;
 }
 .carousel .list .item .topic{
-    color: #ff1a1a;
+    color: var(--main-color);
     font-size: 20px;
 }
 .carousel .list .item .buttons{
@@ -68,12 +67,10 @@
 }
 .carousel .list .item .buttons button:hover{
     transform: scale(1.1);
-    background-color: #ff1a1a;
-    color: #fff;
 }
 .carousel .list .item .buttons button:nth-child(2){
     background-color: transparent;
-    border: 1px solid #ff1a1a;
+    border: 1px solid #fff;
     color: #eee;
 }
 /* thumbail */
@@ -97,8 +94,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(255, 26, 26, 0.3);
-    border: 1px solid rgba(255, 26, 26, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .thumbnail .item .content{
     color: #fff;
@@ -106,10 +102,9 @@
     bottom: 10px;
     left: 10px;
     right: 10px;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #0000009f;
     padding: 3px;
     border-radius: 5px;
-    border: 1px solid rgba(255, 26, 26, 0.3);
 }
 .thumbnail .item .content .title{
     font-weight: 500;
@@ -134,8 +129,8 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(255, 26, 26, 0.2);
-    border: 1px solid #ff1a1a;
+    background-color: #eee4;
+    border: none;
     color: #fff;
     font-family: monospace;
     font-weight: bold;
@@ -143,9 +138,8 @@
     cursor: pointer;
 }
 .arrows button:hover{
-    background-color: #ff1a1a;
-    color: #fff;
-    box-shadow: 0 0 15px rgba(255, 26, 26, 0.5);
+    background-color: #fff;
+    color: #000;
 }
 
 .carousel .list .item .content .des {
@@ -161,6 +155,7 @@
 }
 
 /* animation text in first item */
+
 .carousel .list .item:nth-child(1) .content .author,
 .carousel .list .item:nth-child(1) .content .title,
 .carousel .list .item:nth-child(1) .content .topic,
@@ -237,14 +232,13 @@
 /* running time */
 
 .carousel .time{
-    background-color: #ff1a1a;
     position: absolute;
     z-index: 1000;
     width: 0%;
     height: 3px;
+    background-color: var(--main-color);
     left: 0;
     top: 0;
-    box-shadow: 0 0 10px rgba(255, 26, 26, 0.5);
 }
 
 .carousel.next .time,
@@ -321,18 +315,4 @@
         width: 180px;
         height: 264px;
     }
-}
-
-.carousel .time {
-    background-color: #ff1a1a;
-}
-
-.carousel .list .item .title,
-.carousel .list .item .topic {
-    color: #ff1a1a;
-}
-
-.carousel .list .item .buttons button:hover {
-    background-color: #ff1a1a;
-    color: #fff;
 }
