@@ -28,12 +28,6 @@ html {
     --accent-color: #ff4d4d;
 }
 
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
 .header {
     position: fixed;
     top: 0;
@@ -178,8 +172,6 @@ section {
     justify-content: center;
     gap: 10rem;
 }
-
-
 
 .home-content {
     display: flex;
