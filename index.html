@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoang Nam - Racoon</title>
+
+    
+    <link rel="icon" type="image/png" href="Icon/bx-code-alt.svg">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/project-slide.css">
+    <link rel="stylesheet" href="css/custom-input.css">
+    <link rel="stylesheet" href="css/contact-list.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta property="og:type"    content="website" />
+    <meta property="og:title"   content="Porfolio of Racoon - Developer" />
+    <meta property="og:image"   content="https://meobeo.io/1.jpg" />
+</head>
+<body>
+    <div id="show-contact-list">
+        <button id="close-contact-list" onclick="closeContactList()">Close</button>
+        <div id="contactList"></div>
+    </div>
+
+    <div class="image-container">
+        <img id="main-image" src="Image/background.jpg" alt="Main image">
+    </div>
+    <header class="header" id="header">
+        <a href="#home" class="logo"><span>Racoon</span></a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+            <a href="#leave-message"><i class='bx bx-envelope'></i></a>
+        </nav>
+    </header>
+    
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi,I'm <br><span style="margin-top: 10px;">Luu Lam Cong</span></h1>
+            <h3 class="text-animation">I'm a <span id="text-span"></span><span class="cursor"></span></h3>
+            <p>The best way to predict the future is to invent it.</p>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/gaumeoanbanhxeo/" target="_blank"><i class='bx bxl-facebook' ></i></a>
+                <a href="https://github.com/luuconghoangnam" target="_blank"><i class='bx bxl-github' ></i></a>
+                <!-- <a href="https://www.upwork.com/freelancers/~0168627d1a811b886a?mp_source=share" target="_blank"><i class='bx bxl-upwork'></i></a>
+                <a href="skype://live:.cid.cec49c1ea7cf28c3?chat" target="_blank"><i class='bx bxl-skype' ></i></a>
+                <a href="https://www.instagram.com/meobeocutevcl/" target="_blank"><i class='bx bxl-instagram' ></i></a> -->
+            </div>
+
+            <div class="btn-group">
+                <a href="https://www.upwork.com/freelancers/~01fd053ba8194cd707?mp_source=share" class="btn">Hire</a>
+                <a href="#contact" class="btn">Contact</a>
+            </div>
+        </div>
+
+        <div class="home-img">
+            <img src="Image/avatar.jpeg" alt="home image">
+        </div>
+    </section>
+
+    <section class="education" id="education">
+        <h2 class="heading">Education</h2>
+
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2017 - 2020</div>
+                <div class="timeline-content">
+                    <h3>High School</h3>
+                    <p>THPT Giao Thuy B, Nam Dinh </p>
+                </div>   
+            </div>
+
+            <!-- <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2017 - 2020</div>
+                <div class="timeline-content">
+                    <h3>University</h3>
+                    <p>Faculty of Mechanical Engineering, University of Transport and Communications</p>
+                </div>   
+            </div> -->
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2020 - now</div>
+                <div class="timeline-content">
+                    <h3>University</h3>
+                    <p>Faculty of Information Technology, Hanoi National University of Education</p>
+                </div>
+            </div>
+<!-- 
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jan 2024 - Sep 2024</div>
+                <div class="timeline-content">
+                    <h3>Thaisonsoft</h3>
+                    <p>.Net Developer</p>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <section class="projects" id="projects" style="padding: 0; position: relative; height: 100vh;">
+        <h2 class="heading">Projects</h2>
+        <!-- carousel -->
+        <div class="carousel">
+            <!-- list item -->
+            <div class="list">
+                <div class="item">
+                    <img src="image/project-image/RA.jpg">
+                    <div class="content">
+                        <div class="author">Racoon</div>
+                        <div class="title">Review Application</div>
+                        <div class="topic">#Review</div>
+                        <div class="des">
+                            Website of Review Application
+                        </div>
+                        <div class="buttons">
+                            <button onclick="openProject('https://www.hososinhvien.hoangnam/')">ACCESS</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="image/project-image/RA_Teacher.jpg">
+                    <div class="content">
+                        <div class="author">Racoon</div>
+                        <div class="title">Review Application</div>
+                        <div class="topic">#Review</div>
+                        <div class="des">
+                            Website of Review Application
+                        </div>
+                        <div class="buttons">
+                            <button onclick="openProject('https://www.hososinhvien.hoangnam/')">ACCESS</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="item">
+                    <img src="image/project-image/bws.jpg">
+                    <div class="content">
+                        <div class="author">meobeo</div>
+                        <div class="title">Blue Web String</div>
+                        <div class="topic">#LandingPage</div>
+                        <div class="des">
+                            Landing page of Blue Web String
+                        </div>
+                        <div class="buttons">
+                            <button onclick="openProject('https://bluewebstring.com/')">ACCESS</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="image/project-image/tarot.jpg">
+                    <div class="content">
+                        <div class="author">meobeo</div>
+                        <div class="title">Tarot Reader</div>
+                        <div class="topic">#Tarot</div>
+                        <div class="des">
+                            A cute website made by Meobeo for you to view tarot readings. Wishing you all a joyful time!
+                        </div>
+                        <div class="buttons">
+                            <button onclick="openProject('https://meobeotarot.netlify.app/')">ACCESS</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="image/project-image/quotes.jpg">
+                    <div class="content">
+                        <div class="author">meobeo</div>
+                        <div class="title">Love Message</div>
+                        <div class="topic">#Quotes</div>
+                        <div class="des">
+                            Read interesting quotes every day!
+                        </div>
+                        <div class="buttons">
+                            <button onclick="openProject('https://meobeoquotes.netlify.app/')">ACCESS</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <!-- list thumnail -->
+            <div class="thumbnail">
+                <div class="item">
+                    <img src="image/project-image/RA_mobile.jpg">
+                    <div class="content">
+                        <div class="title">
+                            Review Application
+                        </div>
+                        <div class="description">
+                            Website of Review Application
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="image/project-image/RA_Teacher_mobile.jpg">
+                    <div class="content">
+                        <div class="title">
+                            Review Application
+                        </div>
+                        <div class="description">
+                            Website of Review Application
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="item">
+                    <img src="image/project-image/bws-mobile.jpeg">
+                    <div class="content">
+                        <div class="title">
+                            Blue Web String
+                        </div>
+                        <div class="description">
+                            Landing page
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="image/project-image/tarot-mobile.jpeg">
+                    <div class="content">
+                        <div class="title">
+                            Tarot Reader
+                        </div>
+                        <div class="description">
+                            Read tarot online
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="image/project-image/quotes-mobile.jpeg">
+                    <div class="content">
+                        <div class="title">
+                            Love Message
+                        </div>
+                        <div class="description">
+                            Read quotes
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- next prev -->
+
+            <div class="arrows">
+                <button id="prev"><</button>
+                <button id="next">></button>
+            </div>
+            <!-- time running -->
+            <div class="time"></div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="heading">Skills</h2>
+        <div class="skills-container">
+            <div class="skills-box">
+                <div class="skill-info">
+                    <i class='bx bxl-html5 skill-icons' ></i>
+                    <h4>HTML Skills:</h4>
+                    <ul>
+                        <li>Proficient in creating and structuring web content using HTML5.</li>
+                        <li>Experienced in building responsive and accessible web pages.</li>
+                        <li>Skilled in using semantic elements to enhance SEO and usability.</li>
+                        <li>Adept at integrating multimedia elements and forms.</li>
+                        <li>Familiar with debugging and validating HTML code to ensure cross-browser compatibility.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="skills-box">
+                <div class="skill-info">
+                    <i class='bx bxl-css3 skill-icons'></i>
+                    <h4>CSS Skills:</h4>
+                    <ul>
+                        <li>Proficient in designing and styling web pages using CSS3.</li>
+                        <li>Experienced in creating responsive layouts with Flexbox and CSS Grid.</li>
+                        <li>Skilled in implementing animations and transitions for dynamic user experiences.</li>
+                        <li>Adept at using pre-processors like SASS/SCSS for efficient styling.</li>
+                        <li>Familiar with optimizing CSS for performance and maintaining cross-browser compatibility.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="skills-box">
+                <div class="skill-info">
+                    <i class='bx bxl-javascript skill-icons' ></i>
+                    <h4>JavaScript Skills:</h4>
+                    <ul>
+                        <li>Proficient in writing and debugging JavaScript code to create dynamic and interactive web applications.</li>
+                        <li>Experienced with ES6+ features for modern JavaScript development.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- <div class="skills-box">
+                <div class="skill-info">
+                    <i class='bx bxl-java skill-icons' ></i>
+                    <h4>Java Skills:</h4>
+                    <ul>
+                        <li>Proficient in object-oriented programming (OOP) principles using Java.</li>
+                        <li>Experienced in developing robust and scalable applications with Java SE and Java EE.</li>
+                        <li>Familiar with Java development tools such as IntelliJ IDEA, Eclipse.</li>
+                    </ul>
+                </div>
+            </div> -->
+
+            <div class="skills-box">
+                <div class="skill-info">
+                    <i class='bx bxl-android skill-icons'></i>
+                    <h4>Android Development Skills (Java):</h4>
+                    <ul>
+                        <li>Proficient in developing Android applications using Java.</li>
+                        <li>Experienced with Android SDK and Android Studio for building and testing apps.</li>
+                        <li>Skilled in designing user interfaces with XML and creating responsive layouts.</li>
+                        <li>Adept at integrating RESTful APIs and handling data with SQLite and Room.</li>
+                        <li>Familiar with implementing Android components such as Activities, Fragments, and Services.</li>
+                        <li>Knowledgeable in using third-party libraries and tools like Retrofit, Glide, and Firebase for enhanced functionality.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="skills-box">
+                <div class="skill-info">
+                    <i class='bx bxl-github skill-icons' ></i>
+                    <h4>GitHub Skills:</h4>
+                    <ul>
+                        <li>Proficient in using GitHub for version control and collaborative development.</li>
+                        <li>Experienced in managing repositories, branching, and merging code.</li>
+                        <li>Adept at writing clear commit messages and maintaining a well-documented codebase.</li>
+                        <li>Familiar with handling pull requests, code reviews, and issue tracking.</li>
+                        <li>Knowledgeable in using GitHub Pages for hosting and deploying static websites.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- <div class="skills-box">
+                <div class="skill-info">
+                    <i class='bx bxl-firebase skill-icons' ></i>
+                    <h4>Firebase Skills:</h4>
+                    <ul>
+                        <li>Proficient in using Firebase for backend services in web and mobile applications.</li>
+                        <li>Experienced with Firebase Authentication for user sign-up and login functionalities.</li>
+                        <li>Skilled in using Firestore and Realtime Database for efficient data storage and synchronization.</li>
+                        <li>Adept at implementing Firebase Cloud Messaging for push notifications.</li>
+                        <li>Familiar with Firebase Analytics for tracking user behavior and app performance.</li>
+                        <li>Knowledgeable in using Firebase Cloud Functions for serverless application logic.</li>
+                    </ul>
+                </div>
+            </div> -->
+
+            <div class="skills-box">
+                <div class="skill-info">
+                    <i class='bx bx-data skill-icons' ></i>
+                    <h4>Database Skills:</h4>
+                    <ul>
+                        <li>Proficient in designing, implementing, and managing relational databases such as MySQL and SQLite.</li>
+                        <li>Experienced with NoSQL databases like MongoDB and Firebase Firestore for flexible data modeling.</li>
+                        <li>Skilled in writing complex SQL queries, stored procedures, and triggers for data manipulation and retrieval.</li>
+                        <li>Adept at using ORM frameworks such as Hibernate and Sequelize for database abstraction.</li>
+                        <li>Familiar with database optimization techniques for improving performance and scalability.</li>
+                        <li>Knowledgeable in database backup, recovery, and security best practices.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- <div class="skills-box">
+                <div class="skill-info">
+                    <i class='bx bx-book skill-icons'></i>
+                    <h4>English Proficiency:</h4>
+                    <ul>
+                        <li>Intermediate (B1) level proficiency in English.</li>
+                        <li>Capable of reading and understanding technical documentation and professional materials.</li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- <section class="services" id="services">
+        <h2 class="heading">Services</h2>
+
+        <div class="services-container">
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>Web Development</h4>
+                    <p>Our web development services offer comprehensive solutions to build, enhance, and maintain your online presence. We specialize in creating responsive and user-friendly websites using the latest technologies such as HTML5, CSS3, JavaScript, and popular frameworks like React, WordPress and Angular. Our team ensures optimal performance, security, and scalability for your web applications. We also provide custom backend development, API integration, and database management to meet your unique business needs. With a focus on SEO and user experience, we help drive traffic and engage your audience effectively.</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>Android Development (Java)</h4>
+                    <p>Our Android development services specialize in creating high-performance, user-friendly mobile applications using Java. We provide end-to-end solutions, from conceptualization and design to development, testing, and deployment. Leveraging the latest Android SDK and tools like Android Studio, we ensure your app is responsive, secure, and optimized for various devices. Our expertise includes integrating third-party APIs, utilizing Firebase for backend services, and implementing features such as push notifications and in-app purchases. We focus on delivering a seamless user experience to help your app stand out in the competitive mobile market.</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>Create Landing Page</h4>
+                    <p>Our landing page creation services are tailored to meet the unique needs of both individuals and businesses. We specialize in designing and developing high-converting landing pages that capture your audience's attention and drive engagement. Using the latest web technologies such as HTML5, CSS3, and JavaScript, we ensure your landing page is visually appealing, responsive, and optimized for all devices. Our team focuses on effective call-to-actions, SEO best practices, and fast load times to maximize your conversion rates. Whether you're promoting a product, service, or personal brand, we provide custom solutions to help you achieve your goals.</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>Create Web CV (Curriculum Vitae)</h4>
+                    <p>Our web CV creation services help individuals establish a strong online presence by developing personalized CV websites. We design and build visually appealing, user-friendly websites that effectively showcase your professional skills, experience, and achievements. Utilizing the latest web technologies such as HTML5, CSS3, and JavaScript, we ensure your CV website is responsive and optimized for all devices. Our team focuses on creating a clean and modern design, incorporating interactive elements, and integrating SEO best practices to increase visibility. Whether you are a job seeker, freelancer, or professional, our custom web CV solutions will enhance your online portfolio and make a lasting impression on potential employers.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-box">
+            <h2 class="heading">Testimonials</h2>
+
+            <div class="wrapper">
+                <div class="testimonial-item">
+                    <img src="Image/zzz/cuuvuive.jpg" alt="Testimonial">
+                    <h2>Cìu vui vẻ</h2>
+                    <div class="rating">
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                    </div>
+                    <p>Be be be be be be.</p>
+                </div>
+
+                <div class="testimonial-item">
+                    <img src="Image/zzz/oggy.jpg" alt="Testimonial">
+                    <h2>Oggy</h2>
+                    <div class="rating">
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                    </div>
+                    <p>Gọi em là lỗi vì dù có chuyện gì thì lỗi cũng là của anh.</p>
+                </div>
+
+                <div class="testimonial-item">
+                    <img src="Image/zzz/jack.jpg" alt="Testimonial">
+                    <h2>Jack</h2>
+                    <div class="rating">
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                    </div>
+                    <p>Thiếu tất cả, thừa mỗi cân.</p>
+                </div>
+
+                <div class="testimonial-item">
+                    <img src="Image/zzz/tomandjerry.jpg" alt="Testimonial">
+                    <h2>Tom & Jerry</h2>
+                    <div class="rating">
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                    </div>
+                    <p>Good meo.</p>
+                </div>
+
+                <div class="testimonial-item">
+                    <img src="Image/zzz/heppi.jpg" alt="Testimonial">
+                    <h2>Happy</h2>
+                    <div class="rating">
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                    </div>
+                    <p>Cậu thả thính tôi thì cậu sẽ có tội nhưng không nặng.</p>
+                </div>
+
+                <div class="testimonial-item">
+                    <img src="Image/zzz/car2.jpg" alt="Testimonial">
+                    <h2>Lighting Mcqueen</h2>
+                    <div class="rating">
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                        <i class='bx bxs-star star-gold' ></i>
+                    </div>
+                    <p>Speed. Faster than fast, quicker than quick. I am Lighting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact Me For Work</h2>
+
+        <button id="open-contact-list"><i class='bx bxs-inbox' ></i></button>
+
+        <form id="contactForm">
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="text" id="fullName" placeholder="Full Name">
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <div class="input-box">
+                    <input type="number" id="phoneNumber" placeholder="Phone Number">
+                    <input type="text" id="subject" placeholder="Subject">
+                </div>
+            </div>
+            <div class="input-group-2">
+                <textarea id="message" cols="30" rows="15" placeholder="Your Message"></textarea>
+                <input type="submit" value="Send Message" class="btn">
+            </div>
+        </form>
+    </section>
+
+    <section class="leave-message" id="leave-message">
+        
+        <h2 class="heading" style="color: #000;">Leave Me A Message</h2>
+        <div id="user-info">
+            <img id="userProfilePicture">
+            <span id="userName"></span>
+            <span id="userEmail"></span>
+        </div>
+
+        <div id="cmd-toolbar">
+            <img src="Icon/Icon-cmd.png" alt="Icon cmd">
+            <span>Command Prompt</span>
+            <button id="signout">Log out</button>
+        </div>
+
+        <div id="list-comment">
+        </div>
+
+        <div id="comment-container">
+            <div class="input-group-custom" style="position: absolute; top: 0; margin-top: 0; width: calc(100% - 68px);">
+                <input id="comment-input" required="" type="text" name="text" autocomplete="off" class="input">
+                <label class="user-label" id="username-label" style="background-color: #fff;">Text me something</label>
+            </div>
+            <button id="send-comment"></button>
+        </div>
+
+        <button id="login">Login with Google<span class="blinking-cursor">_</span></button>
+        
+        
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="https://www.facebook.com/meobeodangiuu/" target="_blank"><i class='bx bxl-facebook' ></i></a>
+            <a href="https://github.com/hoaphamduc" target="_blank"><i class='bx bxl-github' ></i></a>
+            <!-- <a href="https://www.upwork.com/freelancers/~0168627d1a811b886a?mp_source=share" target="_blank"><i class='bx bxl-upwork'></i></a>
+            <a href="skype://live:.cid.cec49c1ea7cf28c3?chat" target="_blank"><i class='bx bxl-skype' ></i></a>
+            <a href="https://www.instagram.com/meobeocutevcl/" target="_blank"><i class='bx bxl-instagram' ></i></a> -->
+        </div>
+
+        <ul class="list">
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#services">Services</a>
+            </li>
+
+            <li>
+                <a href="#">About Me</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+            <li>
+                <a href="#testimonials">Testimonials</a>
+            </li>
+            <span id="total-view" style="display: block; margin-top: 20px;"></span>
+            <p class="copyright">
+                © 2024 Racoon | All Rights Reserved
+            </p>
+        </ul>
+    </footer>
+</body>
+<script src="js/function.js"></script>
+<script src="js/project-slide.js"></script>
+<script src="js/firebase.js" type="module"></script>
+</html>
