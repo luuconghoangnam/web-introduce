@@ -177,8 +177,8 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 section {
-    min-height: 100vh;
-    padding: 10rem 12% 10rem;
+    min-height: auto;
+    padding: 8rem 12% 8rem;
 }
 
 .home {
