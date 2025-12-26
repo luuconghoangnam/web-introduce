@@ -18,7 +18,7 @@ if (heroImage && CSS.supports('animation-timeline', 'auto')) {
 }
 
 const textSpan = document.getElementById('text-span');
-const texts = ["Frontend Designer", "Web Designer", "UI / UX Designer", "Web Developer"];
+const texts = ["Frontend Designer", "Web Designer", "Web Developer", "Unity Developer"];
 let textIndex = 0;
 let charIndex = 0;
 let deleting = false;
