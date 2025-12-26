@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+:root {
+    --bg-color: #0a0a0a;
+    --second-bg-color: #151515;
+    --main-color: #ff1a1a;
+    --text-color: #ffffff;
+    --hover-color: #cc0000;
+    --accent-color: #ff4d4d;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -159,11 +168,11 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 #home {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
+    position: relative;
+    left: auto;
+    top: auto;
+    height: auto;
+    width: 100%;
     padding: 0;
 }
 
@@ -1105,7 +1114,7 @@ section {
     #home {
         padding-left: 10px;
         padding-right: 10px;
-        height: 100%;
+        height: auto;
     }
     .home-content h3 {
         font-size: 18px;
@@ -1135,9 +1144,6 @@ section {
     }   
     #main-image {
         display: none;
-    }
-    #education {
-        margin-top: 100vh;
     }
     .home-content {
         margin-top: 0rem;

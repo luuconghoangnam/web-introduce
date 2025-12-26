@@ -1,5 +1,6 @@
-if (CSS.supports('animation-timeline', 'auto')) {
-    document.querySelector('img').animate(
+const heroImage = document.querySelector('#main-image');
+if (heroImage && CSS.supports('animation-timeline', 'auto')) {
+    heroImage.animate(
         [
             { transform: 'scale(1)', opacity: 1 },
             { transform: 'scale(5)', opacity: 0 }
@@ -14,8 +15,6 @@ if (CSS.supports('animation-timeline', 'auto')) {
             })
         }
     );
-} else {
-    console.log("Scroll Timeline không được hỗ trợ trên trình duyệt này.");
 }
 
 const textSpan = document.getElementById('text-span');
@@ -28,6 +27,7 @@ const deletingSpeed = 50;
 const pauseTime = 2000;
 
 function type() {
+    if (!textSpan) return;
     const currentText = texts[textIndex];
     if (!deleting) {
         textSpan.textContent = currentText.substring(0, charIndex++);
@@ -48,40 +48,70 @@ function type() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    type();
+    if (textSpan) {
+        type();
+    }
 });
 
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+const menuIcon = document.querySelector('#menu-icon');
+const mobileMenu = document.querySelector('#mobile-menu');
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('[data-nav-link]');
+const projectFilters = document.querySelectorAll('.project-filter');
+const projectCards = document.querySelectorAll('.project-card');
 
-window.onscroll = () => {
+function setActiveLink() {
+    const top = window.scrollY;
     sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+        const offset = sec.offsetTop - 200;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute('id');
 
-        if (top >= offset && top < offset + height) {
+        if (top >= offset && top < offset + height && id) {
             navLinks.forEach(link => {
-                link.classList.remove('active');
-                let target = document.querySelector('header nav a[href*=' + id + ']');
-                if (target) {
-                    target.classList.add('active');
+                link.classList.remove('text-primary');
+                if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('text-primary');
                 }
             });
         }
     });
-};
+}
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
+window.addEventListener('scroll', () => {
+    setActiveLink();
+});
+setActiveLink();
+
+if (projectFilters.length && projectCards.length) {
+    projectFilters.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+            projectFilters.forEach(b => b.classList.remove('bg-primary', 'text-white', 'border-primary', 'shadow-primary/20', 'shadow-lg'));
+            btn.classList.add('bg-primary', 'text-white', 'border-primary', 'shadow-primary/20', 'shadow-lg');
+
+            projectCards.forEach(card => {
+                const isMatch = filter === 'all' || card.classList.contains(`cat-${filter}`);
+                card.style.display = isMatch ? 'flex' : 'none';
+            });
+        });
+    });
+    // set default active
+    const defaultBtn = document.querySelector('.project-filter[data-filter="all"]');
+    if (defaultBtn) defaultBtn.click();
+}
+
+if (menuIcon && mobileMenu) {
+    menuIcon.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const iconSpan = menuIcon.querySelector('.material-symbols-outlined');
+        if (iconSpan) {
+            iconSpan.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+        }
+    });
 }
 
 // open project in new tab
-
 function openProject(link) {
     window.open(link, "_blank");
 }
@@ -90,28 +120,30 @@ document.addEventListener("DOMContentLoaded", function() {
     const commentInput = document.getElementById('comment-input');
     const sendCommentButton = document.getElementById('send-comment');
 
-    commentInput.addEventListener("keypress", function(event) {
-        if (event.key === "Enter" || event.keyCode === 13) {
-            event.preventDefault();
-            sendCommentButton.click();
-        }
-    });
+    if (commentInput && sendCommentButton) {
+        commentInput.addEventListener("keypress", function(event) {
+            if (event.key === "Enter" || event.keyCode === 13) {
+                event.preventDefault();
+                sendCommentButton.click();
+            }
+        });
+    }
 });
 
 function closeContactList() {
-    document.getElementById('show-contact-list').style.display = "none";
+    const modal = document.getElementById('show-contact-list');
+    if (modal) {
+        modal.style.display = "none";
+    }
 }
 
 function changeNavBackground() {
-    var nav = document.getElementById("header");
+    const nav = document.getElementById("header");
+    if (!nav) return;
     if (window.scrollY > 30) {
-        // Khi cuộn xuống - trong suốt
-        nav.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
-        nav.style.backdropFilter = "blur(10px)";
+        nav.classList.add('shadow-lg');
     } else {
-        // Khi ở đầu trang - màu đen
-        nav.style.backgroundColor = "rgb(0, 0, 0)";
-        nav.style.backdropFilter = "none";
+        nav.classList.remove('shadow-lg');
     }
 }
 

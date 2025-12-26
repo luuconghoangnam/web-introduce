@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coonie the Mighty!</title>
+    <meta name="description" content="Portfolio của Luu Lam Cong - Web Developer & UI Designer. Các dự án, kỹ năng và thông tin liên hệ.">
+    <title>Gone be the one!</title>
 
     
     <link rel="icon" type="image/png" href="Icon/bx-code-alt.svg">
@@ -13,61 +14,186 @@
     <link rel="stylesheet" href="css/custom-input.css">
     <link rel="stylesheet" href="css/contact-list.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#ef4444",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#050505",
+                        "surface-dark": "#121212",
+                    },
+                    fontFamily: {
+                        display: ["Public Sans", "sans-serif"],
+                    },
+                    borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
+                },
+            },
+        };
+    </script>
     <meta property="og:type"    content="website" />
     <meta property="og:title"   content="Porfolio of Racoon - Developer" />
     <meta property="og:image"   content="https://meobeo.io/1.jpg" />
 </head>
-<body>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white antialiased overflow-x-hidden">
     <div id="show-contact-list">
         <button id="close-contact-list" onclick="closeContactList()">Close</button>
         <div id="contactList"></div>
     </div>
 
-    <div class="image-container">
-        <img id="main-image" src="Image/background.jpg" alt="Main image">
-    </div>
-    <header class="header" id="header">
-        <a href="#home" class="logo"><span>Coonie</span></a>
+    <nav id="header" class="w-full fixed top-0 z-50 transition-all duration-300 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-white/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <div class="size-8 rounded-full bg-primary flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-xl font-bold">code</span>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight">Gone<span class="text-primary">.</span></span>
+                </div>
 
-        <i class='bx bx-menu' id="menu-icon"></i>
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="text-sm font-medium hover:text-primary transition-colors nav-link" href="#home" data-nav-link>Home</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors nav-link" href="#education" data-nav-link>Education</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors nav-link" href="#projects" data-nav-link>Projects</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors nav-link" href="#skills" data-nav-link>Skills</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors nav-link" href="#testimonials" data-nav-link>Testimonials</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors nav-link" href="#cv" data-nav-link>CV</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors nav-link" href="#contact" data-nav-link>Contact</a>
+                </div>
 
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#education">Education</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <!-- <a href="#services">Services</a> -->
-            <a href="#testimonials">Testimonials</a>
-            <a href="#cv">CurriculumVitae</a>
-            <a href="#contact">Contact</a>
-            <a href="#footer"><i class='bx bx-envelope'></i></a>
-        </nav>
-    </header>
+                <div class="hidden md:flex">
+                    <a href="CV/CV-LuuLamCong.pdf" target="_blank" class="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 transition-all rounded-full px-5 py-2.5 text-sm font-semibold">
+                        <span>Tải CV</span>
+                        <span class="material-symbols-outlined text-sm">download</span>
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="menu-icon" class="text-white p-2">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden border-t border-white/10 bg-background-dark/95 backdrop-blur px-6 py-4 space-y-3">
+            <a class="block text-sm font-medium hover:text-primary transition-colors nav-link" href="#home" data-nav-link>Home</a>
+            <a class="block text-sm font-medium hover:text-primary transition-colors nav-link" href="#education" data-nav-link>Education</a>
+            <a class="block text-sm font-medium hover:text-primary transition-colors nav-link" href="#projects" data-nav-link>Projects</a>
+            <a class="block text-sm font-medium hover:text-primary transition-colors nav-link" href="#skills" data-nav-link>Skills</a>
+            <a class="block text-sm font-medium hover:text-primary transition-colors nav-link" href="#testimonials" data-nav-link>Testimonials</a>
+            <a class="block text-sm font-medium hover:text-primary transition-colors nav-link" href="#cv" data-nav-link>CV</a>
+            <a class="block text-sm font-medium hover:text-primary transition-colors nav-link" href="#contact" data-nav-link>Contact</a>
+            <a href="CV/CV-LuuLamCong.pdf" target="_blank" class="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 transition-all rounded-full px-5 py-2.5 text-sm font-semibold">
+                <span>Tải CV</span>
+                <span class="material-symbols-outlined text-sm">download</span>
+            </a>
+        </div>
+    </nav>
     
-    <section class="home" id="home">
-        <div class="home-content">
-            <h1>Hi,I'm <br><span style="margin-top: 10px;">Luu Lam Cong</span></h1>
-            <h3 class="text-animation">I'm a <span id="text-span"></span><span class="cursor"></span></h3>
-            <p>The best way to predict the future is to invent it.</p>
+    <section id="home" class="relative flex flex-col justify-center min-h-screen pt-24">
+        <div class="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4"></div>
+        <div class="absolute bottom-0 left-0 -z-10 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] -translate-x-1/4 translate-y-1/4"></div>
 
-            <div class="social-icons">
-                <a href="https://www.facebook.com/gaumeoanbanhxeo/" target="_blank"><i class='bx bxl-facebook' ></i></a>
-                <a href="https://github.com/luuconghoangnam" target="_blank"><i class='bx bxl-github' ></i></a>
-                <a href="https://www.upwork.com/freelancers/~01fd053ba8194cd707?mp_source=share" target="_blank"><i class='bx bxl-upwork'></i></a>
-                <a href="https://discord.com/channels/695896610781265942/695896611263348740" target="_blank"><i class='bx bxl-discord' ></i></a>
-                <a href="https://steamcommunity.com/profiles/76561199209523517/" target="_blank"><i class='bx bxl-steam' ></i></a>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full h-full flex flex-col lg:flex-row items-center gap-12 lg:gap-20 py-12 lg:py-0">
+            <div class="flex-1 flex flex-col items-start text-left z-10 order-2 lg:order-1">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Sẵn sàng nhận freelance
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight mb-6 text-white">
+                    Xây dựng trải nghiệm số
+                    <br class="hidden md:block"/>
+                    mang lại
+                    <br class="hidden md:block"/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-300">giá trị</span>.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed mb-8">
+                    Tôi là Luu Lam Cong, Web Developer &amp; UI Designer. Tập trung vào hiệu năng, trải nghiệm người dùng và code sạch để biến ý tưởng thành sản phẩm thực tế.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4 w-full">
+                    <a href="#projects" class="bg-primary hover:bg-red-600 text-white px-8 py-4 rounded-full text-base font-bold transition-all shadow-[0_0_20px_rgba(239,68,68,0.3)] hover:shadow-[0_0_30px_rgba(239,68,68,0.5)] flex items-center gap-2 group">
+                        Xem dự án
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform text-lg">arrow_forward</span>
+                    </a>
+                    <a href="#contact" class="bg-transparent border border-white/20 hover:border-primary/50 text-white hover:text-primary px-8 py-4 rounded-full text-base font-bold transition-all flex items-center gap-2">
+                        Liên hệ
+                    </a>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-white/5 w-full">
+                    <p class="text-xs text-gray-500 uppercase tracking-widest mb-4"></p>
+                    <div class="flex gap-6 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                        <!-- <div class="flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-3xl">token</span>
+                            <span class="font-bold text-lg"></span>
+                        </div> -->
+                        <div class="flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-3xl">all_inclusive</span>
+                            <span class="font-bold text-lg">Infinite</span>
+                        </div>
+                        <!-- <div class="flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-3xl">diamond</span>
+                            <span class="font-bold text-lg"></span>
+                        </div> -->
+                    </div>
+                </div>
             </div>
 
-            <div class="btn-group">
-                <a href="https://www.upwork.com/freelancers/~01fd053ba8194cd707?mp_source=share" class="btn">Hire</a>
-                <a href="#contact" class="btn">Contact</a>
+            <div class="flex-1 flex justify-center lg:justify-end relative z-10 order-1 lg:order-2 w-full max-w-[500px] lg:max-w-none">
+                <div class="relative w-full aspect-square max-w-[500px] group">
+                    <div class="absolute inset-0 rounded-full border border-white/10 animate-[spin_10s_linear_infinite]"></div>
+                    <div class="absolute inset-4 rounded-full border border-dashed border-white/10 animate-[spin_15s_linear_infinite_reverse]"></div>
+                    <div class="absolute inset-8 rounded-full overflow-hidden border-4 border-surface-dark bg-surface-dark shadow-2xl transition-all duration-500 group-hover:shadow-[0_0_40px_rgba(239,68,68,0.5)] group-hover:border-primary/60">
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" aria-label="Chân dung Luu Lam Cong" style='background-image: url("Image/avatar2.jpeg");'></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="absolute top-[15%] left-0 -translate-x-4 bg-surface-dark/90 backdrop-blur border border-white/10 p-3 rounded-2xl shadow-xl flex items-center gap-3 animate-[bounce_3s_infinite]">
+                        <div class="bg-white/10 p-2 rounded-full text-white">
+                            <span class="material-symbols-outlined text-xl">code</span>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400">Kinh nghiệm</p>
+                            <p class="text-sm font-bold text-white">3+ năm</p>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-[20%] right-0 translate-x-4 bg-surface-dark/90 backdrop-blur border border-white/10 p-3 rounded-2xl shadow-xl flex items-center gap-3 animate-[bounce_4s_infinite]">
+                        <div class="bg-primary/20 p-2 rounded-full text-primary">
+                            <span class="material-symbols-outlined text-xl">check_circle</span>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400">Dự án</p>
+                            <p class="text-sm font-bold text-white">10+ hoàn thành</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="home-img">
-            <img src="Image/avatar2.jpeg" alt="home image">
-            <!-- <video src="Image/0108(4).mp4"></video> -->
+        <div class="hidden xl:flex fixed left-8 bottom-12 flex-col items-center gap-6 after:content-[''] after:w-[1px] after:h-24 after:bg-white/20">
+            <a class="text-gray-400 hover:text-primary hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-primary rounded-full p-2" href="https://www.facebook.com/gaumeoanbanhxeo/" target="_blank" aria-label="Facebook">
+                <i class='bx bxl-facebook text-2xl'></i>
+            </a>
+            <a class="text-gray-400 hover:text-primary hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-primary rounded-full p-2" href="https://github.com/luuconghoangnam" target="_blank" aria-label="GitHub">
+                <i class='bx bxl-github text-2xl'></i>
+            </a>
+            <a class="text-gray-400 hover:text-primary hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-primary rounded-full p-2" href="https://www.upwork.com/freelancers/~01fd053ba8194cd707?mp_source=share" target="_blank" aria-label="Upwork">
+                <i class='bx bxl-upwork text-2xl'></i>
+            </a>
+            <a class="text-gray-400 hover:text-primary hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-primary rounded-full p-2" href="https://discord.com/channels/695896610781265942/695896611263348740" target="_blank" aria-label="Discord">
+                <i class='bx bxl-discord text-2xl'></i>
+            </a>
+            <a class="text-gray-400 hover:text-primary hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-primary rounded-full p-2" href="https://steamcommunity.com/profiles/76561199209523517/" target="_blank" aria-label="Steam">
+                <i class='bx bxl-steam text-2xl'></i>
+            </a>
+            <div class="h-4"></div>
         </div>
     </section>
 
@@ -113,98 +239,134 @@
         </div>
     </section>
 
-    <section class="projects" id="projects" style="padding: 0; position: relative; height: 100vh;">
-        <h2 class="heading">Projects</h2>
-        <!-- carousel -->
-        <div class="carousel">
-            <!-- list item -->
-            <div class="list">
-                <div class="item">
-                    <img src="Image/project-image/student.jpg">
-                    <div class="content">
-                        <div class="author">Racoon</div>
-                        <div class="title">Review Application</div>
-                        <div class="topic">#Review</div>
-                        <div class="des">
-                            Website of Review Application
-                        </div>
-                        <div class="buttons">
-                            <button onclick="openProject('https://www.hososinhvien.hoangnam/')">ACCESS</button>
-                        </div>
-                    </div>
+    <section id="projects" class="py-20 bg-background-dark text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 group/wrapper">
+            <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl font-bold tracking-tight">Selected Projects</h2>
+                    <p class="mt-4 text-lg text-gray-400">
+                        Một vài sản phẩm nổi bật tôi đã làm
+                    </p>
                 </div>
-                <div class="item">
-                    <img src="Image/project-image/teacher.png">
-                    <div class="content">
-                        <div class="author">Racoon</div>
-                        <div class="title">Review Application</div>
-                        <div class="topic">#Review</div>
-                        <div class="des">
-                            Website of Review Application
-                        </div>
-                        <div class="buttons">
-                            <button onclick="openProject('https://www.hososinhvien.hoangnam/')">ACCESS</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="Image/project-image/ban_hang.png">
-                    <div class="content">
-                        <div class="author">Racoon</div>
-                        <div class="title">Mini Market Management</div>
-                        <div class="topic">#App</div>
-                        <div class="des">
-                            Mini Market Management Application
-                        </div>
-                        <div class="buttons">
-                            <button onclick="openProject('https://www.minimarket.hoangnam/')">ACCESS</button>
-                        </div>
-                    </div>
+                <div class="flex flex-wrap gap-2 md:justify-end">
+                    <button class="project-filter px-5 py-2 rounded-full border border-[#482323] bg-transparent text-sm font-medium text-gray-400 hover:bg-[#331919] hover:text-white transition-all" data-filter="all">
+                        All Work
+                    </button>
+                    <button class="project-filter px-5 py-2 rounded-full border border-[#482323] bg-transparent text-sm font-medium text-gray-400 hover:bg-[#331919] hover:text-white transition-all" data-filter="web">
+                        #Web
+                    </button>
+                    <button class="project-filter px-5 py-2 rounded-full border border-[#482323] bg-transparent text-sm font-medium text-gray-400 hover:bg-[#331919] hover:text-white transition-all" data-filter="app">
+                        #App
+                    </button>
                 </div>
             </div>
-            <!-- list thumnail -->
-            <div class="thumbnail">
-                <div class="item">
-                    <img src="Image/project-image/student-mobile.jpg">
-                    <div class="content">
-                        <div class="title">
-                            Student Management
-                        </div>
-                        <div class="description">
-                            Website of Review Application
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="Image/project-image/teacher-mobile.jpg">
-                    <div class="content">
-                        <div class="title">
-                            Review Application
-                        </div>
-                        <div class="description">
-                            Website of Review Application
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="Image/project-image/ban_hang_mobile.png">
-                    <div class="content">
-                        <div class="title">
-                            Mini Market Management
-                        </div>
-                        <div class="description">
-                            Mini Market Management Application
-                        </div>
-                    </div>
-                </div>
-            <!-- next prev -->
 
-            <div class="arrows">
-                <button id="prev"><</button>
-                <button id="next">></button>
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <article class="project-card cat-web group relative flex flex-col overflow-hidden rounded-xl bg-surface-dark border border-[#482323] shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/30 hover:border-primary">
+                    <div class="relative aspect-video w-full overflow-hidden bg-gray-800">
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-60 z-10"></div>
+                        <div class="absolute inset-0 bg-primary/20 opacity-0 transition-opacity duration-300 z-20 group-hover:opacity-100 mix-blend-overlay"></div>
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" aria-label="Review Application" style="background-image: url('Image/project-image/student.jpg');"></div>
+                        <div class="absolute right-3 top-3 z-30 rounded-full bg-background-dark/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm border border-white/10">
+                            2023
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col p-6 relative z-30">
+                        <div class="mb-3 flex flex-wrap gap-2">
+                            <span class="inline-flex items-center rounded bg-primary/10 px-2 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">#Web</span>
+                            <span class="inline-flex items-center rounded bg-[#482323] px-2 py-1 text-xs font-medium text-gray-400">#Review</span>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold group-hover:text-primary transition-colors">Review Application</h3>
+                        <p class="mb-6 flex-1 text-sm leading-relaxed text-gray-400">
+                            Website Review Application cho sinh viên và giáo viên, tập trung vào trải nghiệm và tốc độ.
+                        </p>
+                        <div class="mt-auto flex items-center justify-between border-t border-[#482323] pt-4">
+                            <a class="group/btn flex items-center gap-2 text-sm font-bold transition-colors hover:text-primary" href="https://www.hososinhvien.hoangnam/" target="_blank">
+                                ACCESS
+                                <span class="material-symbols-outlined text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+                            </a>
+                            <div class="flex gap-3">
+                                <a class="text-gray-400 transition-colors hover:text-white" href="https://github.com/luuconghoangnam" title="View Code" target="_blank">
+                                    <span class="material-symbols-outlined text-[20px]">code</span>
+                                </a>
+                                <a class="text-gray-400 transition-colors hover:text-white" href="https://www.hososinhvien.hoangnam/" title="Live Preview" target="_blank">
+                                    <span class="material-symbols-outlined text-[20px]">visibility</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card cat-web group relative flex flex-col overflow-hidden rounded-xl bg-surface-dark border border-[#482323] shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/30 hover:border-primary">
+                    <div class="relative aspect-video w-full overflow-hidden bg-gray-800">
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-60 z-10"></div>
+                        <div class="absolute inset-0 bg-primary/20 opacity-0 transition-opacity duration-300 z-20 group-hover:opacity-100 mix-blend-overlay"></div>
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" aria-label="Review Application" style="background-image: url('Image/project-image/teacher.png');"></div>
+                        <div class="absolute right-3 top-3 z-30 rounded-full bg-background-dark/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm border border-white/10">
+                            2023
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col p-6 relative z-30">
+                        <div class="mb-3 flex flex-wrap gap-2">
+                            <span class="inline-flex items-center rounded bg-primary/10 px-2 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">#Web</span>
+                            <span class="inline-flex items-center rounded bg-[#482323] px-2 py-1 text-xs font-medium text-gray-400">#Review</span>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold group-hover:text-primary transition-colors">Review Application</h3>
+                        <p class="mb-6 flex-1 text-sm leading-relaxed text-gray-400">
+                            Phiên bản dành cho giáo viên, tối ưu quy trình đánh giá và nhập liệu.
+                        </p>
+                        <div class="mt-auto flex items-center justify-between border-t border-[#482323] pt-4">
+                            <a class="group/btn flex items-center gap-2 text-sm font-bold transition-colors hover:text-primary" href="https://www.hososinhvien.hoangnam/" target="_blank">
+                                ACCESS
+                                <span class="material-symbols-outlined text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+                            </a>
+                            <div class="flex gap-3">
+                                <a class="text-gray-400 transition-colors hover:text-white" href="https://github.com/luuconghoangnam" title="View Code" target="_blank">
+                                    <span class="material-symbols-outlined text-[20px]">code</span>
+                                </a>
+                                <a class="text-gray-400 transition-colors hover:text-white" href="https://www.hososinhvien.hoangnam/" title="Live Preview" target="_blank">
+                                    <span class="material-symbols-outlined text-[20px]">visibility</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card cat-app group relative flex flex-col overflow-hidden rounded-xl bg-surface-dark border border-[#482323] shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/30 hover:border-primary">
+                    <div class="relative aspect-video w-full overflow-hidden bg-gray-800">
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-60 z-10"></div>
+                        <div class="absolute inset-0 bg-primary/20 opacity-0 transition-opacity duration-300 z-20 group-hover:opacity-100 mix-blend-overlay"></div>
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" aria-label="Mini Market Management" style="background-image: url('Image/project-image/ban_hang.png');"></div>
+                        <div class="absolute right-3 top-3 z-30 rounded-full bg-background-dark/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm border border-white/10">
+                            2024
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col p-6 relative z-30">
+                        <div class="mb-3 flex flex-wrap gap-2">
+                            <span class="inline-flex items-center rounded bg-primary/10 px-2 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">#App</span>
+                            <span class="inline-flex items-center rounded bg-[#482323] px-2 py-1 text-xs font-medium text-gray-400">#POS</span>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold group-hover:text-primary transition-colors">Mini Market Management</h3>
+                        <p class="mb-6 flex-1 text-sm leading-relaxed text-gray-400">
+                            Ứng dụng quản lý siêu thị mini: tồn kho, bán hàng, hóa đơn và báo cáo nhanh.
+                        </p>
+                        <div class="mt-auto flex items-center justify-between border-t border-[#482323] pt-4">
+                            <a class="group/btn flex items-center gap-2 text-sm font-bold transition-colors hover:text-primary" href="https://www.minimarket.hoangnam/" target="_blank">
+                                ACCESS
+                                <span class="material-symbols-outlined text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+                            </a>
+                            <div class="flex gap-3">
+                                <a class="text-gray-400 transition-colors hover:text-white" href="https://github.com/luuconghoangnam" title="View Code" target="_blank">
+                                    <span class="material-symbols-outlined text-[20px]">code</span>
+                                </a>
+                                <a class="text-gray-400 transition-colors hover:text-white" href="https://www.minimarket.hoangnam/" title="Live Preview" target="_blank">
+                                    <span class="material-symbols-outlined text-[20px]">visibility</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
-            <!-- time running -->
-            <div class="time"></div>
         </div>
     </section>
 
@@ -488,7 +650,7 @@
             </li>
             <span id="total-view" style="display: block; margin-top: 20px;"></span>
             <p class="copyright">
-                <br>© 2024 Coonie | All Rights Reserved</br> 
+                <br>© 2024 Gone | All Rights Reserved</br> 
                 <a><i class='bx bxl-gmail' ></i> luuconghn.lamcong.contacts@gmail.com</a> 
             </p>
         </ul>
@@ -504,4 +666,5 @@
     })();
 </script>
 <script src="js/contact.js"></script>
+</html>
 </html>
